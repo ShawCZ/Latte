@@ -1,6 +1,10 @@
 package com.shaw.latte.app;
 
-import java.util.WeakHashMap;
+import com.joanzapata.iconify.IconFontDescriptor;
+import com.joanzapata.iconify.Iconify;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by shaw on 2017/8/30.
@@ -8,7 +12,8 @@ import java.util.WeakHashMap;
 
 public class Configurator {
 
-    private static final WeakHashMap<String,Object> LATTE_CONFIGS = new WeakHashMap<>();
+    private static final HashMap<String,Object> LATTE_CONFIGS = new HashMap<>();
+    private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
 
     //配置开始了，但是还没配置完
     private Configurator(){
@@ -19,9 +24,10 @@ public class Configurator {
         return Holder.INSTANCE;
     }
 
-    final WeakHashMap<String,Object> getLatteConfigs(){
+    final HashMap<String,Object> getLatteConfigs(){
         return LATTE_CONFIGS;
     }
+
     //线程安全的懒汉单例模式
     private static class Holder{
         private static final Configurator INSTANCE = new Configurator();
@@ -29,7 +35,22 @@ public class Configurator {
 
     //配置结束
     public final void configure(){
+        initIcons();
         LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(),true);
+    }
+
+    private void initIcons(){
+        if (ICONS.size()>0){
+            final Iconify.IconifyInitializer initializer = Iconify.with(ICONS.get(0));
+            for (int i = 1; i < ICONS.size(); i++ ){
+                initializer.with(ICONS.get(i));
+            }
+        }
+    }
+
+    public final Configurator withIcon(IconFontDescriptor descriptor){
+        ICONS.add(descriptor);
+        return this;
     }
 
     public final Configurator withApiHost(String host){
@@ -44,6 +65,7 @@ public class Configurator {
         }
     }
 
+    @SuppressWarnings("unchecked")
     final <T> T getConfigurtion(Enum<ConfigType> key){
         checkConfiguration();
         return (T)LATTE_CONFIGS.get(key.name());
