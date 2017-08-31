@@ -37,7 +37,7 @@ public abstract class BaseDelegate extends SwipeBackFragment {
             mUnbinder = ButterKnife.bind(this,rootview);
             onBindView(savedInstanceState,rootview);
         }
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return rootview;
     }
 
     @Override

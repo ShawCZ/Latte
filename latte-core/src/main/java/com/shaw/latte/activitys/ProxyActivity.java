@@ -19,8 +19,9 @@ public abstract class ProxyActivity extends SupportActivity {
     public abstract LatteDelegate setRootDelegate();
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initContainer(savedInstanceState);
     }
 
     private void initContainer(@Nullable Bundle savedInstanceState){
