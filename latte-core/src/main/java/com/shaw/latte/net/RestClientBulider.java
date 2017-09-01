@@ -1,14 +1,19 @@
 package com.shaw.latte.net;
 
+import android.content.Context;
+
 import com.shaw.latte.net.callback.IError;
 import com.shaw.latte.net.callback.IFailure;
 import com.shaw.latte.net.callback.IRequest;
 import com.shaw.latte.net.callback.ISuccess;
+import com.shaw.latte.ui.LoaderStyle;
 
+import java.io.File;
 import java.util.Map;
 import java.util.WeakHashMap;
 
 import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
 /**
@@ -16,13 +21,20 @@ import okhttp3.ResponseBody;
  */
 
 public class RestClientBulider {
-    private String mUrl;
+    private String mUrl = null;
     private static final Map<String,Object> PARAMS = RestCreator.getParams();
-    private IRequest mIRequest;
-    private ISuccess mISuccess;
-    private IFailure mIFailure;
-    private IError mIError;
-    private ResponseBody mBody;
+    private IRequest mIRequest = null;
+    private ISuccess mISuccess = null;
+    private IFailure mIFailure = null;
+    private IError mIError = null;
+    private RequestBody mBody = null;
+    private Context mContext = null;
+    private LoaderStyle mLoaderStyle = null;
+    private File mFile = null;
+    private String  mDownloadDir= null;
+    private String  mExtension= null;
+    private String  mName= null;
+
 
     RestClientBulider(){
 
@@ -43,8 +55,33 @@ public class RestClientBulider {
         return this;
     }
 
+    public final RestClientBulider file(String filePath){
+        this.mFile = new File(filePath);
+        return this;
+    }
+
+    public final RestClientBulider file(File file){
+        this.mFile = file;
+        return this;
+    }
+
+    public final RestClientBulider dir(String dir){
+        this.mDownloadDir = dir;
+        return this;
+    }
+
+    public final RestClientBulider extension(String extension){
+        this.mExtension = extension;
+        return this;
+    }
+
+    public final RestClientBulider name(String name){
+        this.mName = name;
+        return this;
+    }
+
     public final RestClientBulider raw(String raw){
-        this.mBody = ResponseBody.create(MediaType.parse("application/json;chearset=UTF-8"),raw);
+        this.mBody = RequestBody.create(MediaType.parse("application/json;chearset=UTF-8"),raw);
         return this;
     }
 
@@ -68,8 +105,21 @@ public class RestClientBulider {
         return this;
     }
 
+    public final RestClientBulider loader(Context context,LoaderStyle loaderStyle){
+        this.mContext = context;
+        this.mLoaderStyle = loaderStyle;
+        return this;
+    }
+
+    //使用默认的风格
+    public final RestClientBulider loader(Context context){
+        this.mContext = context;
+        this.mLoaderStyle = LoaderStyle.BallClipRotateIndicator;
+        return this;
+    }
+
     public final RestClient bulid(){
-        return new RestClient(mUrl,PARAMS,mIRequest,mISuccess,mIFailure,mIError,mBody);
+        return new RestClient(mUrl,PARAMS,mDownloadDir,mExtension,mName,mIRequest,mISuccess,mIFailure,mIError,mBody,mFile,mLoaderStyle,mContext);
     }
 
 }
