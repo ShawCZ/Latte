@@ -2,9 +2,8 @@ package com.shaw.latte.net.callback;
 
 import android.os.Handler;
 
-import com.shaw.latte.app.Latte;
-import com.shaw.latte.ui.LatteLoader;
-import com.shaw.latte.ui.LoaderStyle;
+import com.shaw.latte.ui.loader.LatteLoader;
+import com.shaw.latte.ui.loader.LoaderStyle;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -2,9 +2,11 @@ package com.shaw.fastec.example;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.shaw.latte.app.Latte;
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.net.RestClient;
@@ -29,12 +31,12 @@ public class ExampleDelegate extends LatteDelegate {
 
     private void testRestClient(){
         RestClient.bulider()
-                .url("http://news.baidu.com/")
+                .url("http://172.25.198.106:8080/Test/android.jsp")
                 .loader(getContext())
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-//                        Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
                     }
                 })
                 .failure(new IFailure() {

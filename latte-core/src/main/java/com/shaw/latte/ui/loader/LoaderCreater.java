@@ -1,4 +1,4 @@
-package com.shaw.latte.ui;
+package com.shaw.latte.ui.loader;
 
 import android.content.Context;
 

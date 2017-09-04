@@ -7,8 +7,9 @@ import com.shaw.latte.net.callback.IFailure;
 import com.shaw.latte.net.callback.IRequest;
 import com.shaw.latte.net.callback.ISuccess;
 import com.shaw.latte.net.callback.RequestCallbacks;
-import com.shaw.latte.ui.LatteLoader;
-import com.shaw.latte.ui.LoaderStyle;
+import com.shaw.latte.net.download.DownloadHandler;
+import com.shaw.latte.ui.loader.LatteLoader;
+import com.shaw.latte.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.Map;
@@ -17,7 +18,6 @@ import java.util.WeakHashMap;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -153,6 +153,7 @@ public class RestClient {
     }
 
     public final void download(){
-
+        new DownloadHandler(URL,REQUEST,DOWNLOAD_DIR,EXTENSION,NAME,SUCCESS,FAILURE,ERROR)
+                .handleDownload();
     }
 }

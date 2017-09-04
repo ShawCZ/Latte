@@ -4,9 +4,11 @@ package com.shaw.latte.app;
  * Created by shaw on 2017/8/30.
  */
 
-public enum ConfigType {
+public enum ConfigKeys {
     API_HOST,
     APPLICATION_CONTEXT,
     CONFIG_READY,
-    ICON
+    ICON,
+    LOADER_DELAYED,
+    INTERCEPTOR
 }

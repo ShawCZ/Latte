@@ -1,4 +1,4 @@
-package com.shaw.latte.ui;
+package com.shaw.latte.ui.loader;
 
 /**
  * Created by shaw on 2017/8/31.

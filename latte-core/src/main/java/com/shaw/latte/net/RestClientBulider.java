@@ -6,7 +6,7 @@ import com.shaw.latte.net.callback.IError;
 import com.shaw.latte.net.callback.IFailure;
 import com.shaw.latte.net.callback.IRequest;
 import com.shaw.latte.net.callback.ISuccess;
-import com.shaw.latte.ui.LoaderStyle;
+import com.shaw.latte.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.Map;
@@ -14,7 +14,6 @@ import java.util.WeakHashMap;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 
 /**
  * Created by shaw on 2017/8/31.
