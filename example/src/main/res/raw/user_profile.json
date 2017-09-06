@@ -1,0 +1,11 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "userId": 1,
+    "name": "xcz",
+    "avatar": "http://chuantu.biz/t6/32/1504358400x1017681165.jpg",
+    "gender": "男",
+    "address": "四川"
+  }
+}

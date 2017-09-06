@@ -20,6 +20,7 @@ public class LauncherHolder implements Holder<Integer> {
         return mImageView;
     }
 
+    //每次滑动，更新图片
     @Override
     public void UpdateUI(Context context, int position, Integer data) {
         mImageView.setBackgroundResource(data);

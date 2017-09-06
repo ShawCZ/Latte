@@ -3,26 +3,61 @@ package com.shaw.fastec.example;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
+import android.widget.Toast;
 
 import com.shaw.latte.activitys.ProxyActivity;
+import com.shaw.latte.app.Latte;
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.ec.launcher.LauncherDelegate;
 import com.shaw.latte.ec.launcher.LauncherScrollDelegate;
+import com.shaw.latte.ec.sign.ISignListener;
+import com.shaw.latte.ec.sign.SignInDelegate;
 import com.shaw.latte.ec.sign.SignUpDelegate;
+import com.shaw.latte.ui.launcher.ILauncherListener;
+import com.shaw.latte.ui.launcher.OnLauncherFinishTag;
 
-public class ExampleActivity extends ProxyActivity {
+public class ExampleActivity extends ProxyActivity implements
+        ISignListener,
+        ILauncherListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null){
+        if (actionBar != null) {
             actionBar.hide();
         }
+        Latte.getConfigurator().withActivity(this);
     }
 
     @Override
     public LatteDelegate setRootDelegate() {
-        return new ExampleDelegate();
+        return new SignUpDelegate();
+    }
+
+    @Override
+    public void onSignInSuccess() {
+        Toast.makeText(this,"登陆成功",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onSignUpSuccess() {
+        Toast.makeText(this,"注册成功",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onLauncherFinish(OnLauncherFinishTag tag) {
+        switch (tag){
+            case SIGNED:
+                Toast.makeText(this,"启动结束，用户登录了",Toast.LENGTH_LONG).show();
+                startWithPop(new ExampleDelegate());
+                break;
+            case NOT_SIGNED:
+                Toast.makeText(this,"启动结束，用户没有登录",Toast.LENGTH_LONG).show();
+                startWithPop(new SignInDelegate());
+                break;
+            default:
+                break;
+        }
     }
 }

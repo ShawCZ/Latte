@@ -26,17 +26,18 @@ public class ExampleDelegate extends LatteDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
-        testRestClient();
+//        testRestClient();
     }
 
-    private void testRestClient(){
+    private void testRestClient() {
         RestClient.bulider()
-                .url("http://172.25.198.106:8080/Test/android.jsp")
+                .url("http://172.0.0.1/index")
                 .loader(getContext())
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        Toast.makeText(getContext(),response,Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
+                        Log.d("获取到本地json数据",response);
                     }
                 })
                 .failure(new IFailure() {

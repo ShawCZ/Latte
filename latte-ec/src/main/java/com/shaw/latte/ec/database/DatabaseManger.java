@@ -13,6 +13,9 @@ public class DatabaseManger {
     private DaoSession mDaoSession = null;
     private UserProfileDao mDao = null;
 
+    private DatabaseManger(){
+    }
+
     public DatabaseManger init(Context context){
         initDao(context);
         return this;

@@ -21,6 +21,7 @@ public final class LattePreference {
      */
     private static final SharedPreferences PREFERENCES =
             PreferenceManager.getDefaultSharedPreferences(Latte.getApplicationContext());
+
     private static final String APP_PREFERENCES_KEY = "profile";
 
     private static SharedPreferences getAppPreference() {

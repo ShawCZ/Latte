@@ -24,13 +24,13 @@ public abstract class ProxyActivity extends SupportActivity {
         initContainer(savedInstanceState);
     }
 
-    private void initContainer(@Nullable Bundle savedInstanceState){
+    private void initContainer(@Nullable Bundle savedInstanceState) {
         final ContentFrameLayout container = new ContentFrameLayout(this);
         container.setId(R.id.delegate_container);
 
         setContentView(container);
-        if (savedInstanceState == null){
-            loadRootFragment(R.id.delegate_container,setRootDelegate());
+        if (savedInstanceState == null) {
+            loadRootFragment(R.id.delegate_container, setRootDelegate());
         }
     }
 

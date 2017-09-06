@@ -1,14 +1,21 @@
 package com.shaw.latte.ec.sign;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.ec.R;
 import com.shaw.latte.ec.R2;
+import com.shaw.latte.net.RestClient;
+import com.shaw.latte.net.callback.ISuccess;
+import com.shaw.latte.util.log.LatteLogger;
+import com.shaw.latte.wechat.LatteWeChat;
+import com.shaw.latte.wechat.callbacks.IWeChatSignInCallback;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -24,16 +31,45 @@ public class SignInDelegate extends LatteDelegate {
     @BindView(R2.id.edit_sign_in_password)
     TextInputEditText mPassword = null;
 
+    private ISignListener mISignListener = null;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ISignListener){
+            mISignListener = (ISignListener) activity;
+        }
+    }
+
     @OnClick(R2.id.btn_sign_in)
     void onClickSignIn(){
         if (checkForm()){
-
+            RestClient.bulider()
+                    .url("")
+                    .params("email",mEmail.getText().toString())
+                    .params("password",mPassword.getText().toString())
+                    .success(new ISuccess() {
+                        @Override
+                        public void onSuccess(String response) {
+                            LatteLogger.json("USER_PROFILE",response);
+                            Log.d("fuck",response);
+                            //将服务器返回的数据存进数据库
+                            SignHandler.onSignIn(response,mISignListener);
+                        }
+                    })
+                    .bulid()
+                    .post();
         }
     }
 
     @OnClick(R2.id.icon_sign_in_wechat)
     void onClickWeChat(){
+        LatteWeChat.getInstance().onSignSuccess(new IWeChatSignInCallback() {
+            @Override
+            public void onSignInSuccess(String userIfon) {
 
+            }
+        }).signIn();
     }
 
     @OnClick(R2.id.tv_link_sign_up)

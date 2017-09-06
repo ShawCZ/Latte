@@ -12,17 +12,19 @@ import com.shaw.latte.net.interceptors.DebugInterceptor;
  * Created by shaw on 2017/8/30.
  */
 
-public class ExampleApp extends Application{
+public class ExampleApp extends Application {
 
     @Override
-    public void onCreate(){
+    public void onCreate() {
         super.onCreate();
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .withLoaderDelayed(1000)
-                .withInterceptor(new DebugInterceptor("index",R.raw.test))
+                .withInterceptor(new DebugInterceptor("index", R.raw.user_profile))
                 .withApiHost("http://127.0.0.1/")
+                .withWeChatAppId("")
+                .withWeChatAppSecret("")
                 .configure();
         DatabaseManger.getInstance().init(this);
     }

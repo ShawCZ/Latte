@@ -30,6 +30,11 @@ public class RestCreator {
         return RestServiceHolder.REST_SERVICE;
     }
 
+    private static final class RestServiceHolder{
+        private static final RestService REST_SERVICE =
+                RetrofitHolder.RETROFIT_CLIENT.create(RestService.class);
+    }
+
     private static final class RetrofitHolder{
         private static final String BASE_URL = (String) Latte.getConfiguration(ConfigKeys.API_HOST);
         private static final Retrofit RETROFIT_CLIENT = new Retrofit.Builder()
@@ -56,10 +61,5 @@ public class RestCreator {
         private static final OkHttpClient OK_HTTP_CLIENT = addInterceptor()
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .build();
-    }
-
-    private static final class RestServiceHolder{
-        private static final RestService REST_SERVICE =
-                RetrofitHolder.RETROFIT_CLIENT.create(RestService.class);
     }
 }
