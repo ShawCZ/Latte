@@ -1,6 +1,7 @@
 package com.shaw.latte.app;
 
 import android.content.Context;
+import android.os.Handler;
 
 /**
  * Created by shaw on 2017/8/30.
@@ -25,5 +26,9 @@ public final class Latte {
 
     public static Context getApplicationContext() {
         return getConfiguration(ConfigKeys.APPLICATION_CONTEXT);
+    }
+
+    public static Handler getHandler(){
+        return getConfiguration(ConfigKeys.HANDLER);
     }
 }

@@ -45,7 +45,7 @@ public class SignInDelegate extends LatteDelegate {
     void onClickSignIn(){
         if (checkForm()){
             RestClient.bulider()
-                    .url("")
+                    .url("test")
                     .params("email",mEmail.getText().toString())
                     .params("password",mPassword.getText().toString())
                     .success(new ISuccess() {

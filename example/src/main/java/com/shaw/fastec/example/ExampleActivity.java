@@ -10,6 +10,8 @@ import com.shaw.latte.app.Latte;
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.ec.launcher.LauncherDelegate;
 import com.shaw.latte.ec.launcher.LauncherScrollDelegate;
+import com.shaw.latte.ec.main.EcBottomDelegate;
+import com.shaw.latte.ec.main.index.IndexDelegate;
 import com.shaw.latte.ec.sign.ISignListener;
 import com.shaw.latte.ec.sign.SignInDelegate;
 import com.shaw.latte.ec.sign.SignUpDelegate;
@@ -32,7 +34,7 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public LatteDelegate setRootDelegate() {
-        return new SignUpDelegate();
+        return new LauncherDelegate();
     }
 
     @Override
@@ -49,11 +51,11 @@ public class ExampleActivity extends ProxyActivity implements
     public void onLauncherFinish(OnLauncherFinishTag tag) {
         switch (tag){
             case SIGNED:
-                Toast.makeText(this,"启动结束，用户登录了",Toast.LENGTH_LONG).show();
-                startWithPop(new ExampleDelegate());
+                Toast.makeText(this,"启动结束，用户登录了",Toast.LENGTH_SHORT).show();
+                startWithPop(new EcBottomDelegate());
                 break;
             case NOT_SIGNED:
-                Toast.makeText(this,"启动结束，用户没有登录",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"启动结束，用户没有登录",Toast.LENGTH_SHORT).show();
                 startWithPop(new SignInDelegate());
                 break;
             default:

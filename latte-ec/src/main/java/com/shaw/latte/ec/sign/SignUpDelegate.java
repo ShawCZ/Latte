@@ -50,7 +50,7 @@ public class SignUpDelegate extends LatteDelegate {
     void onClickSignUp(){
         if (checkForm()){
             RestClient.bulider()
-                    .url("http://192.168.1.113:8080/user_profile.json")
+                    .url("")
                     .params("name",mName.getText().toString())
                     .params("email",mEmail.getText().toString())
                     .params("phone",mPhone.getText().toString())
