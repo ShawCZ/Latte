@@ -18,6 +18,8 @@ import com.shaw.latte.ec.sign.SignUpDelegate;
 import com.shaw.latte.ui.launcher.ILauncherListener;
 import com.shaw.latte.ui.launcher.OnLauncherFinishTag;
 
+import qiu.niorgai.StatusBarCompat;
+
 public class ExampleActivity extends ProxyActivity implements
         ISignListener,
         ILauncherListener {
@@ -30,6 +32,8 @@ public class ExampleActivity extends ProxyActivity implements
             actionBar.hide();
         }
         Latte.getConfigurator().withActivity(this);
+        //设置为沉浸式状态栏
+        StatusBarCompat.translucentStatusBar(this,true);
     }
 
     @Override

@@ -37,22 +37,27 @@ public class RefreshHandler implements
         this.REFRESH_LAYOUT.setOnRefreshListener(this);
     }
 
+    //简单工厂模式
     public static RefreshHandler create(SwipeRefreshLayout swipeRefreshLayout,
                                         RecyclerView recyclerView, DataConverter converter) {
         return new RefreshHandler(swipeRefreshLayout, recyclerView, converter, new PagingBean());
     }
 
+
     private void refresh() {
+        //开始加载
         REFRESH_LAYOUT.setRefreshing(true);
+
         Latte.getHandler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //进行网络请求，把下面这个方法放到onSuccess里面
+                //进行网络请求，把下面这个方法放到onSuccess里面，完成下拉刷新
                 REFRESH_LAYOUT.setRefreshing(false);
             }
         }, 2000);
     }
 
+    //第一页数据
     public void firstPage(String url) {
         BEAN.setDelayed(1000);
         RestClient.bulider()

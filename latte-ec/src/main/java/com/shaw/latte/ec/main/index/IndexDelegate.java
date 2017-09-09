@@ -2,6 +2,7 @@ package com.shaw.latte.ec.main.index;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,8 +15,10 @@ import com.joanzapata.iconify.widget.IconTextView;
 import com.shaw.latte.delegates.bottom.BottomItemDelegate;
 import com.shaw.latte.ec.R;
 import com.shaw.latte.ec.R2;
+import com.shaw.latte.ec.main.EcBottomDelegate;
 import com.shaw.latte.net.RestClient;
 import com.shaw.latte.net.callback.ISuccess;
+import com.shaw.latte.ui.recycler.BaseDecoration;
 import com.shaw.latte.ui.recycler.MultipleFields;
 import com.shaw.latte.ui.recycler.MultipleItemEntity;
 import com.shaw.latte.ui.refresh.RefreshHandler;
@@ -51,18 +54,32 @@ public class IndexDelegate extends BottomItemDelegate {
         mRefreshHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
     }
 
+    //初始化，设置颜色
     private void initRefreshLayout(){
         mRefreshLayout.setColorSchemeResources(
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light
         );
+
+        /**
+        * 设置位置和显示
+        * true为下拉时球变大，回弹则大变小
+        * 120为启示高度
+        * 300为终止高度
+        * */
         mRefreshLayout.setProgressViewOffset(true,120,300);
     }
 
     private void initRecyclerView(){
         final GridLayoutManager manager = new GridLayoutManager(getContext(),4);
         mRecyclerView.setLayoutManager(manager);
+        mRecyclerView.addItemDecoration
+                (BaseDecoration.create(ContextCompat.getColor(getContext(),R.color.app_background),5));
+        final EcBottomDelegate ecBottomDelegate = getParentDelegate();
+        mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelegate));
+
+
     }
 
     @Override
