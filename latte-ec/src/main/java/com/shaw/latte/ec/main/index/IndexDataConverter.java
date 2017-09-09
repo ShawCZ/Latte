@@ -22,14 +22,16 @@ public class IndexDataConverter extends DataConverter {
         final JSONArray dataArray = JSON.parseObject(getJsonData()).getJSONArray("data");
         final int size = dataArray.size();
         for (int i = 0; i < size; i++) {
+            //取出一块一块的数据
             final JSONObject data = dataArray.getJSONObject(i);
-
+            //分别取出字段
             final String imageUrl = data.getString("imageUrl");
             final String text = data.getString("text");
             final int spanSize = data.getInteger("spanSize");
             final int id = data.getInteger("goodsId");
             final JSONArray banners = data.getJSONArray("banners");
 
+            //用于储存banner数据
             final ArrayList<String> bannerImages = new ArrayList<>();
             int type = 0;
             if (imageUrl == null && text != null) {
@@ -49,6 +51,7 @@ public class IndexDataConverter extends DataConverter {
                 }
             }
 
+            //初始化entity
             final MultipleItemEntity entity = MultipleItemEntity.builder()
                     .setField(MultipleFields.ITEM_TYPE, type)
                     .setField(MultipleFields.SPAN_SIZE, spanSize)

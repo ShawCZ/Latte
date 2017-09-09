@@ -51,7 +51,8 @@ public class IndexDelegate extends BottomItemDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
-        mRefreshHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
+        mRefreshHandler = RefreshHandler
+                .create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
     }
 
     //初始化，设置颜色

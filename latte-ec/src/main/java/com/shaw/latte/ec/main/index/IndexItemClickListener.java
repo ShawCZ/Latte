@@ -5,7 +5,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.shaw.latte.delegates.LatteDelegate;
-import com.shaw.latte.ec.main.detail.GoodsDetailDelegate;
+import com.shaw.latte.ec.detail.GoodsDetailDelegate;
 
 /**
  * Created by shaw on 2017/9/9.

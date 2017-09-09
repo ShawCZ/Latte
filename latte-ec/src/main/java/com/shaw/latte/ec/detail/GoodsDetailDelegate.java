@@ -1,4 +1,4 @@
-package com.shaw.latte.ec.main.detail;
+package com.shaw.latte.ec.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

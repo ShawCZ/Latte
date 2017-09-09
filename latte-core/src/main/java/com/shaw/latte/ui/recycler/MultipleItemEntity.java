@@ -13,18 +13,23 @@ import java.util.WeakHashMap;
 
 public class MultipleItemEntity implements MultiItemEntity {
 
+    //ReferenceQueue可以防止内存爆满，内存不足时，进行内存释放
     private final ReferenceQueue<LinkedHashMap<Object, Object>> ITEM_QUEUE = new ReferenceQueue<>();
+    //处理每加入每个数据的键值对，key和value，保证数据有序
     private final LinkedHashMap<Object, Object> MULTIPLE_FIELDS = new LinkedHashMap<>();
-    private final SoftReference<LinkedHashMap<Object, Object>> FIELDS_REFERENCE = new SoftReference<LinkedHashMap<Object, Object>>(MULTIPLE_FIELDS, ITEM_QUEUE);
+
+    private final SoftReference<LinkedHashMap<Object, Object>> FIELDS_REFERENCE =
+            new SoftReference<>(MULTIPLE_FIELDS, ITEM_QUEUE);
 
     MultipleItemEntity(LinkedHashMap<Object, Object> fields) {
         FIELDS_REFERENCE.get().putAll(fields);
     }
 
-    public static MultipleEntityBuilder builder(){
+    public static MultipleEntityBuilder builder() {
         return new MultipleEntityBuilder();
     }
 
+    //返回Item的类型，第一个get()得到的是MULTIPLE_FIELDS
     @Override
     public int getItemType() {
         return (int) FIELDS_REFERENCE.get().get(MultipleFields.ITEM_TYPE);

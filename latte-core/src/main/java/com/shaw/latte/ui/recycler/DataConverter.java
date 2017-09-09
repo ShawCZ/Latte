@@ -18,6 +18,7 @@ public abstract class DataConverter {
         return this;
     }
 
+    //判断，必须要有数据才能return数据
     protected String getJsonData() {
         if (mJsonData == null || mJsonData.isEmpty()) {
             throw new NullPointerException("DATA IS BULL!!!");

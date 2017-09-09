@@ -26,7 +26,7 @@ public class MultipleEntityBuilder {
         return this;
     }
 
-    public final MultipleEntityBuilder setFields(WeakHashMap<?, ?> map) {
+    public final MultipleEntityBuilder setFields(LinkedHashMap<?, ?> map) {
         FIELDS.putAll(map);
         return this;
     }

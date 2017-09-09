@@ -59,6 +59,7 @@ public class MultipleRecyclerAdapter extends
 
         //设置宽度监听
         setSpanSizeLookup(this);
+        //打开的动态效果
         openLoadAnimation();
         //多次执行动画
         isFirstOnly(false);
@@ -103,7 +104,8 @@ public class MultipleRecyclerAdapter extends
                     mIsInitBanner = true;
                 }
                 break;
-
+            default:
+                break;
         }
     }
 

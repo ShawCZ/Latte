@@ -17,7 +17,7 @@
       "goodsId": 1,
       "text": "测试描述1",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633998&di=b47bdcfa1b884395d47f9a63eef57165&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F161215%2F106-1612151G414Y5.jpg",
-      "spanSize": "4"
+      "spanSize": "2"
     },
     {
       "goodsId": 2,
@@ -29,13 +29,13 @@
       "goodsId": 3,
       "text": "测试描述3",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633997&di=e495dbfff819c388948e0634dd8198c7&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F170608%2F106-1F60PU131L5.jpg",
-      "spanSize": "2"
+      "spanSize": "4"
     },
     {
       "goodsId": 4,
       "text": "测试描述4",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633996&di=ebd786a90b9624fb6fbfd0db3a330502&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F170221%2F106-1F221114F21H.jpg",
-      "spanSize": "4"
+      "spanSize": "2"
     },
     {
       "goodsId": 5,
@@ -47,7 +47,7 @@
       "goodsId": 6,
       "text": "测试描述6",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861840144&di=14fe36a3a8dadf61076791c851fc20a3&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F160714%2F102-160G4112541509.jpg",
-      "spanSize": "2"
+      "spanSize": "4"
     },
     {
       "goodsId": 7,
