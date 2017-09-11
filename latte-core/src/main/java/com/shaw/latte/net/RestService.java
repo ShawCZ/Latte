@@ -25,6 +25,7 @@ import retrofit2.http.Url;
 
 public interface  RestService {
 
+    //QueryMap会把键值对拼接到url里
     @GET
     Call<String> get(@Url String url, @QueryMap Map<String,Object> params);
 

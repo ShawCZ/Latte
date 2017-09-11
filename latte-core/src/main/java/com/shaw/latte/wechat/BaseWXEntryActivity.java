@@ -44,7 +44,7 @@ public abstract class BaseWXEntryActivity extends BaseWXAvtivity {
     }
 
     private void getAuth(String authUrl){
-        RestClient.bulider()
+        RestClient.builder()
                 .url(authUrl)
                 .success(new ISuccess() {
                     @Override
@@ -66,12 +66,12 @@ public abstract class BaseWXEntryActivity extends BaseWXAvtivity {
                         getUserInfo(userInfoUrl.toString());
                     }
                 })
-                .bulid()
+                .build()
                 .get();
     }
 
     private void getUserInfo(String userInfoUrl){
-        RestClient.bulider()
+        RestClient.builder()
                 .url(userInfoUrl)
                 .success(new ISuccess() {
                     @Override
@@ -91,7 +91,7 @@ public abstract class BaseWXEntryActivity extends BaseWXAvtivity {
 
                     }
                 })
-                .bulid()
+                .build()
                 .get();
     }
 }

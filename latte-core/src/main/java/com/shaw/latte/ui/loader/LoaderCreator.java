@@ -11,7 +11,7 @@ import java.util.WeakHashMap;
  * Created by shaw on 2017/8/31.
  */
 
-public class LoaderCreater {
+public class LoaderCreator {
 
     private static final WeakHashMap<String,Indicator> LOADING_MAP = new WeakHashMap<>();
 

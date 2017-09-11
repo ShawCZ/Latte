@@ -35,8 +35,11 @@ public class RestCreator {
                 RetrofitHolder.RETROFIT_CLIENT.create(RestService.class);
     }
 
+    //静态内部类Holder单例模式
     private static final class RetrofitHolder{
+        //获取全局的ApiHost
         private static final String BASE_URL = (String) Latte.getConfiguration(ConfigKeys.API_HOST);
+        //简化的建造者模式
         private static final Retrofit RETROFIT_CLIENT = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(OKHttpHolder.OK_HTTP_CLIENT)
@@ -44,6 +47,7 @@ public class RestCreator {
                 .build();
     }
 
+    //OKHttp惰性初始化
     private static final class OKHttpHolder{
         private static final int TIME_OUT = 60;
         private static final ArrayList<Interceptor> INTERCEPTORS = Latte.getConfiguration(ConfigKeys.INTERCEPTOR);

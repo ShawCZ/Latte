@@ -33,7 +33,7 @@ public class LatteLoader {
 
         final AppCompatDialog dialog = new AppCompatDialog(context, R.style.dialog);
 
-        final AVLoadingIndicatorView avLoadingIndicatorView = LoaderCreater.create(type,context);
+        final AVLoadingIndicatorView avLoadingIndicatorView = LoaderCreator.create(type,context);
         dialog.setContentView(avLoadingIndicatorView);
 
         int deviceWidth = DimenUtil.getScreenWidth();

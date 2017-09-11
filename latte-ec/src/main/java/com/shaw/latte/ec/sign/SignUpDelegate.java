@@ -7,7 +7,6 @@ import android.support.design.widget.TextInputEditText;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Toast;
 
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.ec.R;
@@ -49,7 +48,7 @@ public class SignUpDelegate extends LatteDelegate {
     @OnClick(R2.id.btn_sign_up)
     void onClickSignUp(){
         if (checkForm()){
-            RestClient.bulider()
+            RestClient.builder()
                     .url("")
                     .params("name",mName.getText().toString())
                     .params("email",mEmail.getText().toString())
@@ -64,7 +63,7 @@ public class SignUpDelegate extends LatteDelegate {
                             SignHandler.onSignUp(response,mISignListener);
                         }
                     })
-                    .bulid()
+                    .build()
                     .post();
         }
     }

@@ -60,7 +60,7 @@ public class RefreshHandler implements
     //第一页数据
     public void firstPage(String url) {
         BEAN.setDelayed(1000);
-        RestClient.bulider()
+        RestClient.builder()
                 .url(url)
                 .success(new ISuccess() {
                     @Override
@@ -75,7 +75,7 @@ public class RefreshHandler implements
                         BEAN.addIndex();
                     }
                 })
-                .bulid()
+                .build()
                 .get();
     }
 

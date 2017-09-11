@@ -24,10 +24,12 @@ public final class Latte {
         return getConfigurator().getConfiguration(key);
     }
 
+    //获取全局Context
     public static Context getApplicationContext() {
         return getConfiguration(ConfigKeys.APPLICATION_CONTEXT);
     }
 
+    //获取全局的Handler
     public static Handler getHandler(){
         return getConfiguration(ConfigKeys.HANDLER);
     }

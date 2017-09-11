@@ -53,7 +53,7 @@ public class ContentDelegate extends LatteDelegate {
     }
 
     private void initData(){
-        RestClient.bulider()
+        RestClient.builder()
                 .url("content")
                 .success(new ISuccess() {
                     @Override
@@ -65,7 +65,7 @@ public class ContentDelegate extends LatteDelegate {
                         mRecyclerView.setAdapter(sectionAdapter);
                     }
                 })
-                .bulid()
+                .build()
                 .get();
     }
 

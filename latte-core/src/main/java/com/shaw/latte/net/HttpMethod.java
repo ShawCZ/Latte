@@ -2,6 +2,7 @@ package com.shaw.latte.net;
 
 /**
  * Created by shaw on 2017/8/31.
+ * 方便进行判断
  */
 
 public enum HttpMethod {

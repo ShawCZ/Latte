@@ -20,7 +20,9 @@ import okhttp3.Interceptor;
 public class Configurator {
 
     private static final Handler HANDLER = new Handler();
+    //存储相关配置
     private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
+    //存储字体图标
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
@@ -30,7 +32,7 @@ public class Configurator {
         LATTE_CONFIGS.put(ConfigKeys.HANDLER,HANDLER);
     }
 
-    //线程安全的懒汉模式
+    //静态内部类，线程安全的懒汉模式
     public static Configurator getInstance() {
         return Holder.INSTANCE;
     }
@@ -41,15 +43,19 @@ public class Configurator {
 
     //配置结束
     public final void configure() {
+        //初始化字体图标
         initIcons();
+        //配置日志工具
         Logger.addLogAdapter(new AndroidLogAdapter());
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
     }
 
+    //获取配置
     final HashMap<Object, Object> getLatteConfigs() {
         return LATTE_CONFIGS;
     }
 
+    //初始化字体图标
     private void initIcons() {
         if (ICONS.size() > 0) {
             final Iconify.IconifyInitializer initializer = Iconify.with(ICONS.get(0));
@@ -59,21 +65,25 @@ public class Configurator {
         }
     }
 
+    //添加自定义字体图标
     public final Configurator withIcon(IconFontDescriptor descriptor) {
         ICONS.add(descriptor);
         return this;
     }
+
 
     public final Configurator withLoaderDelayed(long delayed) {
         LATTE_CONFIGS.put(ConfigKeys.LOADER_DELAYED, delayed);
         return this;
     }
 
+    //添加网络请求域名
     public final Configurator withApiHost(String host) {
         LATTE_CONFIGS.put(ConfigKeys.API_HOST, host);
         return this;
     }
 
+    //添加拦截器
     public final Configurator withInterceptor(Interceptor interceptor) {
         INTERCEPTORS.add(interceptor);
         LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
@@ -101,6 +111,7 @@ public class Configurator {
         return this;
     }
 
+    //检查初始化配置是否完成
     private void checkConfiguration() {
         final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigKeys.CONFIG_READY);
         if (!isReady) {
@@ -108,6 +119,7 @@ public class Configurator {
         }
     }
 
+    //获取key对应的值
     @SuppressWarnings("unchecked")
     final <T> T getConfiguration(Object key) {
         checkConfiguration();

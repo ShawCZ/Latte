@@ -19,7 +19,7 @@ import okhttp3.RequestBody;
  * Created by shaw on 2017/8/31.
  */
 
-public class RestClientBulider {
+public class RestClientBuilder {
     private String mUrl = null;
     private static final Map<String,Object> PARAMS = RestCreator.getParams();
     private IRequest mIRequest = null;
@@ -35,89 +35,89 @@ public class RestClientBulider {
     private String  mName= null;
 
 
-    RestClientBulider(){
+    RestClientBuilder(){
 
     }
 
-    public final RestClientBulider url(String url){
+    public final RestClientBuilder url(String url){
         this.mUrl = url;
         return this;
     }
 
-    public final RestClientBulider params(WeakHashMap<String,Object> params){
+    public final RestClientBuilder params(WeakHashMap<String,Object> params){
         PARAMS.putAll(params);
         return this;
     }
 
-    public final RestClientBulider params(String key,Object value){
+    public final RestClientBuilder params(String key, Object value){
         PARAMS.put(key,value);
         return this;
     }
 
-    public final RestClientBulider file(String filePath){
+    public final RestClientBuilder file(String filePath){
         this.mFile = new File(filePath);
         return this;
     }
 
-    public final RestClientBulider file(File file){
+    public final RestClientBuilder file(File file){
         this.mFile = file;
         return this;
     }
 
-    public final RestClientBulider dir(String dir){
+    public final RestClientBuilder dir(String dir){
         this.mDownloadDir = dir;
         return this;
     }
 
-    public final RestClientBulider extension(String extension){
+    public final RestClientBuilder extension(String extension){
         this.mExtension = extension;
         return this;
     }
 
-    public final RestClientBulider name(String name){
+    public final RestClientBuilder name(String name){
         this.mName = name;
         return this;
     }
 
-    public final RestClientBulider raw(String raw){
-        this.mBody = RequestBody.create(MediaType.parse("application/json;chearset=UTF-8"),raw);
+    public final RestClientBuilder raw(String raw){
+        this.mBody = RequestBody.create(MediaType.parse("application/json;charset=UTF-8"),raw);
         return this;
     }
 
-    public final RestClientBulider success(ISuccess iSuccess){
+    public final RestClientBuilder success(ISuccess iSuccess){
         this.mISuccess = iSuccess;
         return this;
     }
 
-    public final RestClientBulider request(IRequest iRequest){
+    public final RestClientBuilder request(IRequest iRequest){
         this.mIRequest = iRequest;
         return this;
     }
 
-    public final RestClientBulider failure(IFailure iFailure){
+    public final RestClientBuilder failure(IFailure iFailure){
         this.mIFailure = iFailure;
         return this;
     }
 
-    public final RestClientBulider error(IError iError){
+    public final RestClientBuilder error(IError iError){
         this.mIError = iError;
         return this;
     }
 
-    public final RestClientBulider loader(Context context,LoaderStyle loaderStyle){
+    public final RestClientBuilder loader(Context context, LoaderStyle loaderStyle){
         this.mContext = context;
         this.mLoaderStyle = loaderStyle;
         return this;
     }
 
     //使用默认的风格
-    public final RestClientBulider loader(Context context){
+    public final RestClientBuilder loader(Context context){
         this.mContext = context;
         this.mLoaderStyle = LoaderStyle.BallClipRotateIndicator;
         return this;
     }
 
-    public final RestClient bulid(){
+    public final RestClient build(){
         return new RestClient(mUrl,PARAMS,mDownloadDir,mExtension,mName,mIRequest,mISuccess,mIFailure,mIError,mBody,mFile,mLoaderStyle,mContext);
     }
 

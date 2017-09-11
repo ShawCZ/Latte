@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.shaw.latte.delegates.LatteDelegate;
@@ -51,7 +50,7 @@ public class VerticalListDelegate  extends LatteDelegate{
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
-        RestClient.bulider()
+        RestClient.builder()
                 .url("sort_list")
                 .loader(getContext())
                 .success(new ISuccess() {
@@ -66,7 +65,7 @@ public class VerticalListDelegate  extends LatteDelegate{
                         Logger.d(response);
                     }
                 })
-                .bulid()
+                .build()
                 .get();
     }
 }

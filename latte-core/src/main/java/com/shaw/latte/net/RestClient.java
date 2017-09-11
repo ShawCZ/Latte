@@ -23,6 +23,7 @@ import retrofit2.Callback;
 
 /**
  * Created by shaw on 2017/8/31.
+ * 使用建造者模式
  */
 
 public class RestClient {
@@ -68,8 +69,8 @@ public class RestClient {
         this.CONTEXT = context;
     }
 
-    public static RestClientBulider bulider(){
-        return new RestClientBulider();
+    public static RestClientBuilder builder(){
+        return new RestClientBuilder();
     }
 
     private void request(HttpMethod method){

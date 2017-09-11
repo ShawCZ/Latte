@@ -42,7 +42,7 @@ public class RequestCallbacks implements Callback<String>{
                 ERROR.onError(response.code(),response.message());
             }
         }
-        stopLoding();
+        stopLoading();
     }
 
     @Override
@@ -53,10 +53,10 @@ public class RequestCallbacks implements Callback<String>{
         if (REQUEST != null){
             REQUEST.onRequestEnd();
         }
-        stopLoding();
+        stopLoading();
     }
 
-    private void stopLoding(){
+    private void stopLoading(){
         if (LOADER_STYLE != null){
             HANDLER.postDelayed(new Runnable() {
                 @Override

@@ -7,7 +7,7 @@ import com.joanzapata.iconify.Icon;
  */
 
 public enum EcIcons implements Icon {
-    //自己加入的字体
+    //自己加入的unicode字体
     icon_scan('\ue67e'),
     icon_ali_pay('\ue67c');
 

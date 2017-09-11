@@ -27,6 +27,7 @@ public class ExampleActivity extends ProxyActivity implements
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //隐藏ActionBar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
@@ -43,11 +44,13 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public void onSignInSuccess() {
+        startWithPop(new EcBottomDelegate());
         Toast.makeText(this,"登陆成功",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onSignUpSuccess() {
+        startWithPop(new EcBottomDelegate());
         Toast.makeText(this,"注册成功",Toast.LENGTH_LONG).show();
     }
 

@@ -21,7 +21,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
                 .withLoaderDelayed(1000)
-                .withApiHost("http://172.0.0.1/")
+                .withApiHost("http://127.0.0.1/")
                 .withInterceptor(new DebugInterceptor("test", R.raw.user_profile))
                 .withInterceptor(new DebugInterceptor("index",R.raw.index))
                 .withInterceptor(new DebugInterceptor("sort",R.raw.sort_list))

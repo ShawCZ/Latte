@@ -44,7 +44,7 @@ public class SignInDelegate extends LatteDelegate {
     @OnClick(R2.id.btn_sign_in)
     void onClickSignIn(){
         if (checkForm()){
-            RestClient.bulider()
+            RestClient.builder()
                     .url("test")
                     .params("email",mEmail.getText().toString())
                     .params("password",mPassword.getText().toString())
@@ -57,7 +57,7 @@ public class SignInDelegate extends LatteDelegate {
                             SignHandler.onSignIn(response,mISignListener);
                         }
                     })
-                    .bulid()
+                    .build()
                     .post();
         }
     }

@@ -5,6 +5,7 @@ import com.joanzapata.iconify.IconFontDescriptor;
 
 /**
  * Created by shaw on 2017/8/31.
+ * 参考FontAwesomeModule的写法
  */
 
 public class FontEcModule implements IconFontDescriptor {
