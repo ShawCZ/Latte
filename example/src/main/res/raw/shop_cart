@@ -1,0 +1,22 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": [
+    {
+      "title": "商品标题1",
+      "desc": "商品的详细描述1",
+      "id": 1,
+      "price": 1.00,
+      "count": 2,
+      "thumb": "http://chuantu.biz/t6/45/1505130876x1017681166.png"
+    },
+    {
+      "title": "商品标题2",
+      "desc": "商品的详细描述2",
+      "id": 3,
+      "price": 2.00,
+      "count": 3,
+      "thumb": "http://chuantu.biz/t6/45/1505130947x1017681166.png"
+    }
+  ]
+}

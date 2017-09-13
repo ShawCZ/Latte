@@ -11,6 +11,7 @@ import android.view.View;
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.ec.R;
 import com.shaw.latte.ec.R2;
+import com.shaw.latte.ec.main.index.IndexDelegate;
 import com.shaw.latte.net.RestClient;
 import com.shaw.latte.net.callback.ISuccess;
 import com.shaw.latte.util.log.LatteLogger;
@@ -51,8 +52,6 @@ public class SignInDelegate extends LatteDelegate {
                     .success(new ISuccess() {
                         @Override
                         public void onSuccess(String response) {
-                            LatteLogger.json("USER_PROFILE",response);
-                            Log.d("fuck",response);
                             //将服务器返回的数据存进数据库
                             SignHandler.onSignIn(response,mISignListener);
                         }

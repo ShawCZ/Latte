@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dip"
+    android:layout_width="fill_parent"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white"
+    android:descendantFocusability="blocksDescendants">
+
+    <ImageView
+        android:id="@+id/shopping_goods_img"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="centerInside"
+        />
+
+    <TextView
+        android:id="@+id/shopping_goods_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/shopping_goods_img"
+        android:layout_toRightOf="@+id/shopping_goods_img"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/shopping_goods_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shopping_goods_img"
+        android:layout_toRightOf="@+id/shopping_goods_img"
+        android:textColor="#e43440"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/shopping_goods_totalprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shopping_goods_img"
+        android:layout_alignParentRight="true"
+        android:textColor="#e43440"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shopping_goods_img">
+
+        <TextView
+            android:id="@+id/shopping_goods_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="商品数量"
+            android:gravity="right"/>
+
+        <!-- 减少商品数量的布局 -->
+        <Button
+            android:id="@+id/sub_goods_number"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:textColor="#FFACB2BC"
+            android:background="@drawable/goods_category"
+            android:text="-"
+            android:gravity="center"
+            android:focusable="false">
+        </Button>
+        <!-- 商品数量的布局 -->
+        <TextView
+            android:id="@+id/edt_goods_number"
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+        </TextView>
+        <!-- 增加商品数量的布局 -->
+        <Button
+            android:id="@+id/add_goods_number"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:textColor="#FFACB2BC"
+            android:background="@drawable/goods_category"
+            android:text="+"
+            android:gravity="center"
+            android:focusable="false">
+        </Button>
+
+    </LinearLayout>
+</RelativeLayout>

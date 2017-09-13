@@ -8,38 +8,40 @@
       "goodsId": 0,
       "spanSize": "4",
       "banners": [
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg"
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633999&di=7ec4c75d0dcc6ed0ef52866c26954e52&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F151031%2F13-151031114I2M1.jpg"
-        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633998&di=5999e3e7872bff18e24eacf5936915da&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F151028%2F14-15102Q10625515.jpg"
+        "http://chuantu.biz/t6/45/1505130767x1017681166.png",
+        "http://chuantu.biz/t6/45/1505130836x1017681166.png",
+        "http://chuantu.biz/t6/45/1505130912x1017681166.png",
+        "http://chuantu.biz/t6/45/1505130947x1017681166.png",
+        "http://chuantu.biz/t6/45/1505130876x1017681166.png"
       ]
-    }
+    },
     {
       "goodsId": 1,
-      "text": "测试描述1",
+      "text": "爱心饼干",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633998&di=b47bdcfa1b884395d47f9a63eef57165&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F161215%2F106-1612151G414Y5.jpg",
       "spanSize": "2"
     },
     {
       "goodsId": 2,
-      "text": "测试描述2",
+      "text": "芝麻曲奇",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633998&di=73264bf2a17d618383d720646d404f9e&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F170208%2F106-1F20Q1222LA.jpg",
       "spanSize": "2"
     },
     {
       "goodsId": 3,
-      "text": "测试描述3",
+      "text": "草莓冰淇淋",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633997&di=e495dbfff819c388948e0634dd8198c7&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F170608%2F106-1F60PU131L5.jpg",
       "spanSize": "4"
     },
     {
       "goodsId": 4,
-      "text": "测试描述4",
+      "text": "糖果",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633996&di=ebd786a90b9624fb6fbfd0db3a330502&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F170221%2F106-1F221114F21H.jpg",
       "spanSize": "2"
     },
     {
       "goodsId": 5,
-      "text": "测试描述5",
+      "text": "坚果",
       "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861633971&di=238140869d4e643a0f5ecd091b1bcdde&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F131225%2F8-131225204915E6.jpg",
       "spanSize": "2"
     },
