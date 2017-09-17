@@ -44,13 +44,13 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public void onSignInSuccess() {
-        startWithPop(new EcBottomDelegate());
+        getSupportDelegate().startWithPop(new EcBottomDelegate());
         Toast.makeText(this,"登陆成功",Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onSignUpSuccess() {
-        startWithPop(new EcBottomDelegate());
+        getSupportDelegate().startWithPop(new EcBottomDelegate());
         Toast.makeText(this,"注册成功",Toast.LENGTH_LONG).show();
     }
 
@@ -59,11 +59,11 @@ public class ExampleActivity extends ProxyActivity implements
         switch (tag){
             case SIGNED:
                 Toast.makeText(this,"启动结束，用户登录了",Toast.LENGTH_SHORT).show();
-                startWithPop(new EcBottomDelegate());
+                getSupportDelegate().replaceFragment(new EcBottomDelegate(),false);
                 break;
             case NOT_SIGNED:
                 Toast.makeText(this,"启动结束，用户没有登录",Toast.LENGTH_SHORT).show();
-                startWithPop(new SignInDelegate());
+                getSupportDelegate().replaceFragment(new SignInDelegate(),false);
                 break;
             default:
                 break;
