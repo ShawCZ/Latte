@@ -12,7 +12,7 @@ public final class PagingBean {
     //一页显示多少条数据
     private int mPageSize = 0;
     //当前已经显示了几条数据
-    private int mCorrentCount = 0;
+    private int mCurrentCount = 0;
     //加载延迟
     private int mDelayed = 0;
 
@@ -20,8 +20,8 @@ public final class PagingBean {
         return mPageIndex;
     }
 
-    public PagingBean setPageIndex(int mPageIndex) {
-        this.mPageIndex = mPageIndex;
+    public PagingBean setPageIndex(int pageIndex) {
+        this.mPageIndex = pageIndex;
         return this;
     }
 
@@ -29,8 +29,8 @@ public final class PagingBean {
         return mTotal;
     }
 
-    public PagingBean setTotal(int mTotal) {
-        this.mTotal = mTotal;
+    public PagingBean setTotal(int total) {
+        this.mTotal = total;
         return this;
     }
 
@@ -38,17 +38,17 @@ public final class PagingBean {
         return mPageSize;
     }
 
-    public PagingBean setPageSize(int mPageSize) {
-        this.mPageSize = mPageSize;
+    public PagingBean setPageSize(int pageSize) {
+        this.mPageSize = pageSize;
         return this;
     }
 
-    public int getCorrentCount() {
-        return mCorrentCount;
+    public int getCurrentCount() {
+        return mCurrentCount;
     }
 
-    public PagingBean setCorrentCount(int mCorrentCount) {
-        this.mCorrentCount = mCorrentCount;
+    public PagingBean setCurrentCount(int currentCount) {
+        this.mCurrentCount = currentCount;
         return this;
     }
 
@@ -56,8 +56,8 @@ public final class PagingBean {
         return mDelayed;
     }
 
-    public PagingBean setDelayed(int mDelayed) {
-        this.mDelayed = mDelayed;
+    public PagingBean setDelayed(int delayed) {
+        this.mDelayed = delayed;
         return this;
     }
 

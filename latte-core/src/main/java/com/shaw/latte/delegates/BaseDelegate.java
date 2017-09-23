@@ -3,6 +3,7 @@ package com.shaw.latte.delegates;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -18,10 +19,10 @@ import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragmentDelegate;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
-import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 /**
  * Created by shaw on 2017/8/31.
+ *
  */
 
 public abstract class BaseDelegate extends Fragment implements ISupportFragment {
@@ -34,7 +35,7 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
 
     public abstract Object setLayout();
 
-    public abstract void onBindView(@Nullable Bundle savedInstanceState, View rootview);
+    public abstract void onBindView(@Nullable Bundle savedInstanceState,@NonNull View rootView);
 
     @Override
     public void onAttach(Context context) {

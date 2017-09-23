@@ -1,6 +1,7 @@
 package com.shaw.latte.ec.main.personal.profile;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by shaw on 2017/9/17.
+ * Created by shaw on 2017/9/17
  */
 
 public class UserProfileDelegate extends LatteDelegate {
@@ -34,7 +35,7 @@ public class UserProfileDelegate extends LatteDelegate {
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
+    public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         final ListBean image = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_AVATAR)
                 .setId(1)

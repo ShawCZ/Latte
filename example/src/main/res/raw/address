@@ -1,0 +1,28 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": [
+    {
+      "id": 1,
+      "default": true,
+      "name": "张三",
+      "phone": "15189992211",
+      "address": "安徽省合肥市"
+    },
+    {
+      "id": 2,
+      "default": false,
+      "name": "李四",
+      "phone": "13418992211",
+      "address": "安徽省芜湖市"
+    },
+    {
+      "id": 3,
+      "default": false,
+      "name": "王麻子",
+      "phone": "18418992211",
+      "address": "安徽省阜阳市"
+    }
+
+  ]
+}

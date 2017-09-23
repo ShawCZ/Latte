@@ -4,116 +4,121 @@
   "data": [
     {
       "id": 1,
-      "section": "标题1",
+      "section": "休闲零食",
       "goods": [
         {
           "goods_id": 3,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌1"
+          "goods_name": "月饼"
         },
         {
           "goods_id": 4,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌2"
+          "goods_name": "坚果炒货"
         },
         {
           "goods_id": 5,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌3"
+          "goods_name": "糖巧"
         },
         {
           "goods_id": 6,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌4"
+          "goods_name": "肉干果脯"
+        },
+        {
+          "goods_id": 7,
+          "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
+          "goods_name": "休闲零食"
         }
       ]
     },
     {
       "id": 2,
-      "section": "标题2",
+      "section": "生鲜",
       "goods": [
         {
           "goods_id": 13,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌11"
+          "goods_name": "新鲜水果"
         },
         {
           "goods_id": 14,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌12"
+          "goods_name": "海鲜水产"
         },
         {
           "goods_id": 15,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌13"
+          "goods_name": "精选肉类"
         },
         {
           "goods_id": 16,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌14"
+          "goods_name": "蛋类"
         }
       ]
     },
     {
       "id": 3,
-      "section": "标题3",
+      "section": "进口食品",
       "goods": [
         {
           "goods_id": 23,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌1"
+          "goods_name": "饼干蛋糕"
         },
         {
           "goods_id": 24,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌2"
+          "goods_name": "糖果巧克力"
         },
         {
           "goods_id": 25,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌3"
+          "goods_name": "冲调饮品"
         }
       ]
     },
     {
       "id": 4,
-      "section": "标题4",
+      "section": "中外名酒",
       "goods": [
         {
           "goods_id": 33,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌31"
+          "goods_name": "白酒"
         },
         {
           "goods_id": 34,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌32"
+          "goods_name": "葡萄酒"
         },
         {
           "goods_id": 35,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌3"
+          "goods_name": "洋酒"
         },
         {
           "goods_id": 36,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌34"
+          "goods_name": "啤酒"
         }
       ]
     },
     {
       "id": 4,
-      "section": "标题4",
+      "section": "营养保健",
       "goods": [
         {
           "goods_id": 43,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌1"
+          "goods_name": "营养健康"
         },
         {
           "goods_id": 44,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌2"
+          "goods_name": "营养成分"
         },
         {
           "goods_id": 45,
@@ -123,7 +128,7 @@
         {
           "goods_id": 46,
           "goods_thumb": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504861564606&di=afa78dc8dd82bf51e29e986d60361418&imgtype=0&src=http%3A%2F%2F58pic.ooopic.com%2F58pic%2F12%2F91%2F12%2F73258PICM9C.jpg",
-          "goods_name": "品牌4"
+          "goods_name": "滋补养生"
         }
       ]
     },

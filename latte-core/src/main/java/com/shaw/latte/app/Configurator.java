@@ -1,8 +1,10 @@
 package com.shaw.latte.app;
 
 import android.app.Activity;
+import android.app.Application;
 import android.os.Handler;
 
+import com.blankj.utilcode.util.Utils;
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -48,6 +50,8 @@ public class Configurator {
         //配置日志工具
         Logger.addLogAdapter(new AndroidLogAdapter());
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
+        //初始化Utils
+        Utils.init((Application) Latte.getApplicationContext());
     }
 
     //获取配置

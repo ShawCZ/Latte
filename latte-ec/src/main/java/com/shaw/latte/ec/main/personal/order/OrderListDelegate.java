@@ -1,6 +1,7 @@
 package com.shaw.latte.ec.main.personal.order;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -42,7 +43,7 @@ public class OrderListDelegate extends LatteDelegate {
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
+    public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
 
     }
 
@@ -62,6 +63,7 @@ public class OrderListDelegate extends LatteDelegate {
                                 new OrderListDataConverter().setJsonData(response).convert();
                         final OrderListAdapter adapter = new OrderListAdapter(data);
                         mRecyclerView.setAdapter(adapter);
+                        mRecyclerView.addOnItemTouchListener(new OrderClickListener(OrderListDelegate.this));
                     }
                 })
                 .build()

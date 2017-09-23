@@ -18,6 +18,7 @@ import com.shaw.latte.ec.sign.SignUpDelegate;
 import com.shaw.latte.ui.launcher.ILauncherListener;
 import com.shaw.latte.ui.launcher.OnLauncherFinishTag;
 
+import cn.jpush.android.api.JPushInterface;
 import qiu.niorgai.StatusBarCompat;
 
 public class ExampleActivity extends ProxyActivity implements
@@ -35,6 +36,18 @@ public class ExampleActivity extends ProxyActivity implements
         Latte.getConfigurator().withActivity(this);
         //设置为沉浸式状态栏
         StatusBarCompat.translucentStatusBar(this,true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
     }
 
     @Override

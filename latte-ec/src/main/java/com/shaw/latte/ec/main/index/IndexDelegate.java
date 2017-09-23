@@ -62,7 +62,7 @@ public class IndexDelegate extends BottomItemDelegate {
     private RefreshHandler mRefreshHandler = null;
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
+    public void onBindView(@Nullable Bundle savedInstanceState, @android.support.annotation.NonNull View rootView) {
         mRefreshHandler = RefreshHandler
                 .create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
 //      onCallRxGet();
@@ -144,7 +144,7 @@ public class IndexDelegate extends BottomItemDelegate {
         /**
          * 设置位置和显示
          * true为下拉时球变大，回弹则大变小
-         * 120为启示高度
+         * 120为起始高度
          * 300为终止高度
          * */
         mRefreshLayout.setProgressViewOffset(true, 120, 300);
@@ -157,8 +157,6 @@ public class IndexDelegate extends BottomItemDelegate {
                 (BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 5));
         final EcBottomDelegate ecBottomDelegate = getParentDelegate();
         mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelegate));
-
-
     }
 
     @Override

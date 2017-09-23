@@ -74,7 +74,7 @@ public class RxRestClient {
             case DELETE:
                 observable = service.delete(URL, PARAMS);
                 break;
-            case UPLODE:
+            case UPLOAD:
                 final RequestBody requestBody =
                         RequestBody.create(MediaType.parse(MultipartBody.FORM.toString()), FILE);
                 final MultipartBody.Part body =

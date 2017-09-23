@@ -103,7 +103,7 @@ public class RestClient {
             case DELETE:
                 call = service.delete(URL,PARAMS);
                 break;
-            case UPLODE:
+            case UPLOAD:
                 final RequestBody requestBody =
                         RequestBody.create(MediaType.parse(MultipartBody.FORM.toString()),FILE);
                 final MultipartBody.Part body =
@@ -151,6 +151,10 @@ public class RestClient {
 
     public final void delete(){
         request(HttpMethod.DELETE);
+    }
+
+    public final void upload() {
+        request(HttpMethod.UPLOAD);
     }
 
     public final void download(){

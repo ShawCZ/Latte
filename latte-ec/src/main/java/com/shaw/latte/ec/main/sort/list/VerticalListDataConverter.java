@@ -39,10 +39,10 @@ public class VerticalListDataConverter extends DataConverter {
                     .build();
 
             dataList.add(entity);
-            //设置第一个被选中
-            dataList.get(0).setField(MultipleFields.TAG, true);
         }
 
+        //设置第一个被选中
+        dataList.get(0).setField(MultipleFields.TAG, true);
         return dataList;
     }
 }

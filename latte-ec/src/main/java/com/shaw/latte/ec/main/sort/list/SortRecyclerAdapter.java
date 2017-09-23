@@ -20,7 +20,7 @@ import java.util.List;
 import me.yokeyword.fragmentation.SupportHelper;
 
 /**
- * Created by shaw on 2017/9/9.
+ * Created by shaw on 2017/9/9
  */
 
 public class SortRecyclerAdapter extends MultipleRecyclerAdapter {
@@ -41,8 +41,10 @@ public class SortRecyclerAdapter extends MultipleRecyclerAdapter {
         super.convert(holder, entity);
         switch (holder.getItemViewType()) {
             case ItemType.VERTICAL_MENU_LIST:
+                //取出entity的值
                 final String text = entity.getField(MultipleFields.TEXT);
                 final boolean isClicked = entity.getField(MultipleFields.TAG);
+                //取出recycler布局
                 final AppCompatTextView name = holder.getView(R.id.tv_vertical_item_name);
                 final View line = holder.getView(R.id.view_line);
                 final View itemView = holder.itemView;

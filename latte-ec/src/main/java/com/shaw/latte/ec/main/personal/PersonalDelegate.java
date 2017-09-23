@@ -1,6 +1,7 @@
 package com.shaw.latte.ec.main.personal;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,11 +10,13 @@ import android.view.View;
 import com.shaw.latte.delegates.bottom.BottomItemDelegate;
 import com.shaw.latte.ec.R;
 import com.shaw.latte.ec.R2;
+import com.shaw.latte.ec.main.personal.address.AddressDelegate;
 import com.shaw.latte.ec.main.personal.list.ListAdapter;
 import com.shaw.latte.ec.main.personal.list.ListBean;
 import com.shaw.latte.ec.main.personal.list.ListItemType;
 import com.shaw.latte.ec.main.personal.order.OrderListDelegate;
 import com.shaw.latte.ec.main.personal.profile.UserProfileDelegate;
+import com.shaw.latte.ec.main.personal.settings.SettingsDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,16 +65,18 @@ public class PersonalDelegate extends BottomItemDelegate {
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
+    public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         ListBean address = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_NORMAL)
                 .setId(1)
+                .setDelegate(new AddressDelegate())
                 .setText("收货地址")
                 .build();
 
         ListBean system = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_NORMAL)
                 .setId(2)
+                .setDelegate(new SettingsDelegate())
                 .setText("系统设置")
                 .build();
 
@@ -84,5 +89,6 @@ public class PersonalDelegate extends BottomItemDelegate {
         mRvSetting.setLayoutManager(manager);
         final ListAdapter adapter = new ListAdapter(data);
         mRvSetting.setAdapter(adapter);
+        mRvSetting.addOnItemTouchListener(new PersonalClickListener(this));
     }
 }

@@ -2,15 +2,18 @@ package com.shaw.latte.ec.sign;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Toast;
 
 import com.shaw.latte.delegates.LatteDelegate;
 import com.shaw.latte.ec.R;
 import com.shaw.latte.ec.R2;
+import com.shaw.latte.ec.main.EcBottomDelegate;
 import com.shaw.latte.ec.main.index.IndexDelegate;
 import com.shaw.latte.net.RestClient;
 import com.shaw.latte.net.callback.ISuccess;
@@ -65,8 +68,9 @@ public class SignInDelegate extends LatteDelegate {
     void onClickWeChat(){
         LatteWeChat.getInstance().onSignSuccess(new IWeChatSignInCallback() {
             @Override
-            public void onSignInSuccess(String userIfon) {
-
+            public void onSignInSuccess(String userInfo) {
+                getSupportDelegate().startWithPop(new EcBottomDelegate());
+                Toast.makeText(getContext(),"登陆成功",Toast.LENGTH_LONG).show();
             }
         }).signIn();
     }
@@ -106,7 +110,7 @@ public class SignInDelegate extends LatteDelegate {
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootview) {
+    public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
 
     }
 }

@@ -21,7 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by shaw on 2017/9/9.
+ * Created by shaw on 2017/9/9
  */
 
 public class VerticalListDelegate  extends LatteDelegate{
@@ -42,7 +42,7 @@ public class VerticalListDelegate  extends LatteDelegate{
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootview) {
+    public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         initRecyclerView();
     }
 

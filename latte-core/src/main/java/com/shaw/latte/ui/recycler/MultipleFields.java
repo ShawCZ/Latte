@@ -1,7 +1,7 @@
 package com.shaw.latte.ui.recycler;
 
 /**
- * Created by shaw on 2017/9/8.
+ * Created by shaw on 2017/9/8
  */
 
 public enum MultipleFields {
