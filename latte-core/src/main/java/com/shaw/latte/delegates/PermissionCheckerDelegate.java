@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.shaw.latte.ui.camera.CameraImageBean;
 import com.shaw.latte.ui.camera.LatteCamera;
 import com.shaw.latte.ui.camera.RequestCodes;
+import com.shaw.latte.ui.scanner.ScannerDelegate;
 import com.shaw.latte.util.callback.CallbackManager;
 import com.shaw.latte.util.callback.CallbackType;
 import com.shaw.latte.util.callback.IGlobalCallback;
@@ -38,6 +40,16 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
     //这个是真正调用的方法
     public void startCameraWithCheck() {
         PermissionCheckerDelegatePermissionsDispatcher.startCameraWithPermissionCheck(this);
+    }
+
+    //扫描二维码（不直接调用）
+    @NeedsPermission(Manifest.permission.CAMERA)
+    void startScan(BaseDelegate delegate) {
+        delegate.getSupportDelegate().startForResult(new ScannerDelegate(), RequestCodes.SCAN);
+    }
+
+    public void startScanWithCheck(BaseDelegate delegate) {
+        PermissionCheckerDelegatePermissionsDispatcher.startScanWithPermissionCheck(this, delegate);
     }
 
     @OnPermissionDenied(Manifest.permission.CAMERA)
@@ -109,12 +121,12 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
                     final IGlobalCallback<Uri> callback = CallbackManager
                             .getInstance()
                             .getCallback(CallbackType.ON_CROP);
-                    if (callback!=null){
+                    if (callback != null) {
                         callback.executeCallback(cropUri);
                     }
                     break;
                 case RequestCodes.CROP_ERROR:
-                    Toast.makeText(getContext(),"剪裁出错",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "剪裁出错", Toast.LENGTH_LONG).show();
                     break;
 
                 default:

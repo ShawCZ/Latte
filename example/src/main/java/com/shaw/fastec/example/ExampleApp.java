@@ -36,6 +36,7 @@ public class ExampleApp extends Application {
                 .withInterceptor(new DebugInterceptor("order_list", R.raw.oeder_list))
                 .withInterceptor(new DebugInterceptor("address", R.raw.address))
                 .withInterceptor(new DebugInterceptor("about", R.raw.about))
+                .withInterceptor(new DebugInterceptor("goods", R.raw.goods))
                 .withWeChatAppId("wxfcdcecd9df8e0faa")
                 .withWeChatAppSecret("a0560f75335b06e3ebea70f29ff219bf")
                 .configure();

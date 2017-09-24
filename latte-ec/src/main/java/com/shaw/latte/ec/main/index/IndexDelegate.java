@@ -5,33 +5,31 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.shaw.latte.delegates.bottom.BottomItemDelegate;
 import com.shaw.latte.ec.R;
 import com.shaw.latte.ec.R2;
 import com.shaw.latte.ec.main.EcBottomDelegate;
-import com.shaw.latte.net.RestClient;
+import com.shaw.latte.ec.main.index.search.SearchDelegate;
 import com.shaw.latte.net.RestCreator;
-import com.shaw.latte.net.callback.ISuccess;
 import com.shaw.latte.net.rx.RxRestClient;
 import com.shaw.latte.ui.recycler.BaseDecoration;
-import com.shaw.latte.ui.recycler.MultipleFields;
-import com.shaw.latte.ui.recycler.MultipleItemEntity;
-import com.shaw.latte.ui.recycler.MultipleRecyclerAdapter;
 import com.shaw.latte.ui.refresh.RefreshHandler;
+import com.shaw.latte.util.callback.CallbackManager;
+import com.shaw.latte.util.callback.CallbackType;
+import com.shaw.latte.util.callback.IGlobalCallback;
 
-import java.util.ArrayList;
 import java.util.WeakHashMap;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -54,17 +52,31 @@ public class IndexDelegate extends BottomItemDelegate {
     @BindView(R2.id.icon_index_scan)
     IconTextView mIconScan = null;
     @BindView(R2.id.et_search_view)
-    AppCompatEditText mSearchView = null;
-    @BindView(R2.id.icon_index_message)
-    IconTextView mIconMessage = null;
-
+    AppCompatTextView mSearchView = null;
 
     private RefreshHandler mRefreshHandler = null;
+
+    @OnClick(R2.id.icon_index_scan)
+    void onClickScanQrCode() {
+        startScanWithCheck(this.getParentDelegate());
+    }
+
+    @OnClick(R2.id.et_search_view)
+    void onClickRearch() {
+        getParentDelegate().getSupportDelegate().start(new SearchDelegate());
+    }
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @android.support.annotation.NonNull View rootView) {
         mRefreshHandler = RefreshHandler
                 .create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
+        CallbackManager.getInstance()
+                .addCallback(CallbackType.ON_SCAN, new IGlobalCallback<String>() {
+                    @Override
+                    public void executeCallback(@Nullable String args) {
+                        Toast.makeText(getContext(), "得到的二维码是"+args, Toast.LENGTH_SHORT).show();
+                    }
+                });
 //      onCallRxGet();
 //      onCallRxRestClient();
     }
